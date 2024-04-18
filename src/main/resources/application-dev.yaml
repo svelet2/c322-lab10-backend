@@ -1,0 +1,14 @@
+spring:
+  datasoure:
+    url: jdbc:postgresql://localhost:6001/ducks
+    username: postgres
+    password: mercedes
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always

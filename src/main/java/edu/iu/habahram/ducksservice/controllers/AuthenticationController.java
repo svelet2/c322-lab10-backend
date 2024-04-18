@@ -37,8 +37,8 @@ public class AuthenticationController {
         Authentication authentication = authenticationManager
                 .authenticate(
                         new UsernamePasswordAuthenticationToken(
-                                customer.username()
-                                , customer.password()));
+                                customer.getUsername()
+                                , customer.getPassword()));
 
         return tokenService.generateToken(authentication);
     }
