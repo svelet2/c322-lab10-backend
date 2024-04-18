@@ -35,4 +35,3 @@ public class UserDetailsSecurityService implements
             throw new RuntimeException(e);
         }
     }
-}
