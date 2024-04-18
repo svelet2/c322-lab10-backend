@@ -50,7 +50,7 @@ public class CustomerRepository {
         String passwordEncoded = bc.encode(customer.getPassword());
         String data = customer.getUsername() + ","
                 + passwordEncoded
-               + "," + customer.getEmail();
+                + "," + customer.getEmail();
         appendToFile(path, data + NEW_LINE);
     }
 
@@ -71,8 +71,10 @@ public class CustomerRepository {
     public Customer findByUsername(String username) throws IOException {
         List<Customer> customers = findAll();
         for(Customer customer : customers) {
-            if(customer.getUsername().trim().equalsIgnoreCase(username.trim())) {
+            if (customer.getUsername().trim().equalsIgnoreCase(username.trim())) {
                 return customer;
             }
         }
-        return 
+        return null;
+    }
+}
