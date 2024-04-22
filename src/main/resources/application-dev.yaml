@@ -1,6 +1,6 @@
 spring:
-  datasoure:
-    url: jdbc:postgresql://localhost:6001/ducks
+  datasource:
+    url: jdbc:postgresql://localhost:6001/spring-2024
     username: postgres
     password: mercedes
 

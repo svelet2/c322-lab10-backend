@@ -24,7 +24,7 @@ public class UserDetailsSecurityService implements
         try {
             Customer customer =
                     customerRepository.findByUsername(username);
-            if(customer == null) {
+            if (customer == null) {
                 throw new UsernameNotFoundException("");
             }
             return User
@@ -35,3 +35,4 @@ public class UserDetailsSecurityService implements
             throw new RuntimeException(e);
         }
     }
+}

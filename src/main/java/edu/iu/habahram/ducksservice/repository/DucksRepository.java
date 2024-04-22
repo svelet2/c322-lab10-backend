@@ -3,6 +3,7 @@ package edu.iu.habahram.ducksservice.repository;
 import edu.iu.habahram.ducksservice.model.Duck;
 import edu.iu.habahram.ducksservice.model.DuckData;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;

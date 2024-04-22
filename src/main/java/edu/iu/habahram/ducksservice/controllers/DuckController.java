@@ -2,7 +2,9 @@ package edu.iu.habahram.ducksservice.controllers;
 
 import edu.iu.habahram.ducksservice.model.DuckData;
 import edu.iu.habahram.ducksservice.model.Duck;
+import edu.iu.habahram.ducksservice.model.DuckTable;
 import edu.iu.habahram.ducksservice.repository.DucksRepository;
+import edu.iu.habahram.ducksservice.repository.DucksRepositoryDB;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,17 +20,26 @@ import java.util.List;
 public class DuckController {
 
     private DucksRepository ducksRepository;
+    private DucksRepositoryDB ducksRepositoryDB;
 
-    public DuckController(DucksRepository ducksRepository) {
+    public DuckController(DucksRepository ducksRepository, DucksRepositoryDB ducksRepositoryDB) {
         this.ducksRepository = ducksRepository;
+        this.ducksRepositoryDB = ducksRepositoryDB;
     }
 
 
    @PostMapping
     public int add(@RequestBody DuckData duck) {
        try {
-           return ducksRepository.add(duck);
-       } catch (IOException e) {
+           System.out.println("In add");
+           DuckTable  duckRecord = new DuckTable();
+           duckRecord.setId(duck.id());
+           duckRecord.setType(duck.type());
+           duckRecord.setName(duck.name());
+           DuckTable item = ducksRepositoryDB.save(duckRecord);
+           return item.getId();
+
+       } catch (Exception e) {
            throw new RuntimeException(e);
        }
    }

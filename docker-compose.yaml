@@ -7,4 +7,4 @@ services:
     environment:
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: mercedes
-      POSTGRES_DB: ducks
+      POSTGRES_DB: spring-2024
