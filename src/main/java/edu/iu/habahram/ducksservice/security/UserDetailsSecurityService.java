@@ -13,7 +13,6 @@ public class UserDetailsSecurityService implements
         UserDetailsService {
     CustomerRepository customerRepository;
 
-
     public UserDetailsSecurityService(CustomerRepository
                                               customerRepository) {
         this.customerRepository = customerRepository;
