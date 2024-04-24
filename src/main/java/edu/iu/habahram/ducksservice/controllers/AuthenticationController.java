@@ -43,7 +43,6 @@ public class AuthenticationController {
                         new UsernamePasswordAuthenticationToken(
                                 customer.getUsername()
                                 , customer.getPassword()));
-        System.out.println(customer.getUsername() + " " + customer.getPassword());
         return tokenService.generateToken(authentication);
     }
 }
